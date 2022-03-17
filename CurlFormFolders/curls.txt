@@ -1,0 +1,3 @@
+curl -kviX GET https://DEV.SECRETS.SIGMA.SBRF.RU/v1/CI02315894_CI03240756_GEAR23/A/FRST/GLOB/SCND/KV/SEC1-OSH1 --header "X-Vault-Token: " --header "Content-Type: application/json"
+curl -vi vk.com
+curl google.com

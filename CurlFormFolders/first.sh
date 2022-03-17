@@ -1,16 +1,18 @@
 #!/bin/bash
-#/set -eu
+#set -eu
 
 ################Создание имени файла##############
-FileName=`echo "${0}" | cut -d'.' -f2 | cut -d'/' -f2 `
-#echo Hello world >  ${FileName}_$(date '+%Y%m%d_%H%M')
+temp=`echo "${0}" | cut -d'.' -f2 | cut -d'/' -f2 `
+FileName=${temp}_$(date '+%Y%m%d_%H%M%S')
 
 #####Отправка курлов в цикле / заменитьна параметр
-input="/c/sites.txt"
+input="/c/sites.txt" #$2
 
 while read -r -e line
 do
 var=$(echo $line)
 echo $var
-curl -v -i "$var" >> ${FileName}_$(date '+%Y%m%d_%H%M')
+$var >> "${FileName}.file"
+echo -e "\n\n\n\n" >> "${FileName}.file"
 done < "$input"
+

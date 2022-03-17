@@ -1,0 +1,62 @@
+HTTP/1.1 301 Moved Permanently
+Server: kittenx
+Date: Thu, 17 Mar 2022 15:59:38 GMT
+Content-Type: text/html
+Content-Length: 164
+Connection: keep-alive
+Location: https://vk.com/
+X-Frontend: front609305
+Access-Control-Expose-Headers: X-Frontend
+
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>kittenx</center>
+</body>
+</html>
+
+
+
+
+
+HTTP/1.1 301 Moved Permanently
+Location: http://www.google.com/
+Content-Type: text/html; charset=UTF-8
+Date: Thu, 17 Mar 2022 15:59:39 GMT
+Expires: Sat, 16 Apr 2022 15:59:39 GMT
+Cache-Control: public, max-age=2592000
+Server: gws
+Content-Length: 219
+X-XSS-Protection: 0
+X-Frame-Options: SAMEORIGIN
+
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="http://www.google.com/">here</A>.
+</BODY></HTML>
+
+
+
+
+
+HTTP/1.1 302 Found
+Cache-Control: no-cache,no-store,max-age=0,must-revalidate
+Content-Length: 0
+Date: Thu, 17 Mar 2022 15:59:41 GMT
+Expires: Thu, 17 Mar 2022 15:59:42 GMT
+Last-Modified: Thu, 17 Mar 2022 15:59:42 GMT
+Location: https://ya.ru/
+P3P: policyref="/w3c/p3p.xml", CP="NON DSP ADM DEV PSD IVDo OUR IND STP PHY PRE NAV UNI"
+X-Content-Type-Options: nosniff
+set-cookie: is_gdpr=0; Path=/; Domain=.ya.ru; Expires=Sat, 16 Mar 2024 15:59:41 GMT
+set-cookie: is_gdpr_b=CNDpdRCCaCgC; Path=/; Domain=.ya.ru; Expires=Sat, 16 Mar 2024 15:59:41 GMT
+set-cookie: _yasc=y5AAq1fEJnMRPPFKIu8mTtebfXpiNgJLZq85hEVdDJxA9w==; domain=.ya.ru; path=/; expires=Sat, 16-Apr-2022 15:59:41 GMT; secure
+
+
+
+
+
+
