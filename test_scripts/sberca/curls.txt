@@ -1,0 +1,3 @@
+curl -kviX LIST ${X_TEST_VAULT_ADDR}/v1/CI02315894_CI03240756_GEAR06/A/FRST/APP/SCND/SBERCA/roles -H "X-Vault-Token: ${X_TEST_VAULT_TOKEN}" -H "Content-Type: application/json"
+curl -kviX GET ${X_TEST_VAULT_ADDR}/v1/CI02315894_CI03240756_GEAR06/A/FRST/APP/SCND/SBERCA/roles/${X_TEST_VAULT_ROLENAME} -H "X-Vault-Token: ${X_TEST_VAULT_TOKEN}" -H "Content-Type: application/json"
+curl -kviX GET ${X_TEST_VAULT_ADDR}/v1/cmo/config -H "X-Vault-Token: ${X_TEST_VAULT_TOKEN}" -H "Content-Type: application/json"

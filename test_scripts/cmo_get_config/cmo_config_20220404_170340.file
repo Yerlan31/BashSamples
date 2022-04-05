@@ -1,0 +1,72 @@
+curl -kviX GET ${X_TEST_VAULT_ADDR}/v1/${X_TEST_VAULT_CMO_NAME}/config -H "X-Vault-Token: ${X_TEST_VAULT_TOKEN}" -H "X-Vault-Request: true" -H "Content-Type: application/json" --write-out %{http_code} -H "Connection: close"
+Note: Unnecessary use of -X or --request, GET is already inferred.
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0HTTP/2 200 
+cache-control: no-store
+content-type: application/json
+date: Mon, 04 Apr 2022 14:03:41 GMT
+
+{"request_id":"ad85dacd-6d04-f65c-ff87-1749321b084f","lease_id":"","renewable":false,"lease_duration":0,"data":{"ad_admin_group_name":"CAB-GR-SecMan-Admins","ad_config":[{"accessor":"auth_ldap_947fccb8","address":"ldaps://10.53.219.186:636","credentials_path":"leo/test/ad","infra_owner_group_template":"ALL-GA-SecMan-\u003cnamespace\u003e-I-A-\u003crolename\u003e-\u003csegment\u003e","insecure_tls":true,"name":"ds","namespace":"CN=users,DC=dev_ad,DC=test,DC=vault","object_classes":"top,group","start_tls":false,"tls_max_version":"","tls_min_version":"","trust_domain":"","upn_domain":"dev_ad.test.vault"}],"adalpha_policy":"path \"sys/mounts/ad/ca.sbrf.ru\" {capabilities = [\"create\", \"update\"]} path \"sys/mounts/ad/ca.sbrf.ru/tune\" {capabilities = [\"read\", \"list\"]} path \"sys/mounts/ad/omega.sbrf.ru\" {capabilities = [\"create\", \"update\"]} path \"sys/mounts/ad/omega.sbrf.ru/tune\" {capabilities = [\"read\", \"list\"]} path \"sys/mounts/ad/delta.sbrf.ru\" {capabilities = [\"create\", \"update\"]} path \"sys/mounts/ad/delta.sbrf.ru/tune\" {capabilities = [\"read\", \"list\"]} path \"ad/ca.sbrf.ru/config\" {capabilities = [\"create\", \"update\"]} path \"ad/ca.sbrf.ru/roles/*\" {capabilities = [\"create\", \"update\"]} path \"ad/ca.sbrf.ru/rotate-role/*\" {capabilities = [\"create\", \"update\"]} path \"ad/omega.sbrf.ru/config\" {capabilities = [\"create\", \"update\"]} path \"ad/omega.sbrf.ru/roles/*\" {capabilities = [\"create\", \"update\"]} path \"ad/omega.sbrf.ru/rotate-role/*\" {capabilities = [\"create\", \"update\"]} path \"ad/delta.sbrf.ru/config\" {capabilities = [\"create\", \"update\"]} path \"ad/delta.sbrf.ru/roles/*\" {capabilities = [\"create\", \"update\"]} path \"ad/delta.sbrf.ru/rotate-role/*\" {capabilities = [\"create\", \"update\"]} path \"+/sys/mounts/ad/ca.sbrf.ru\" {capabilities = [\"create\", \"update\"]} path \"+/sys/mounts/ad/ca.sbrf.ru/tune\" {capabilities = [\"read\", \"list\"]} path \"+/sys/mounts/ad/omega.sbrf.ru\" {capabilities = [\"create\", \"update\"]} path \"+/sys/mounts/ad/omega.sbrf.ru/tune\" {capabilities = [\"read\", \"list\"]} path \"+/sys/mounts/ad/delta.sbrf.ru\" {capabilities = [\"create\", \"update\"]} path \"+/sys/mounts/ad/delta.sbrf.ru/tune\" {capabilities = [\"read\", \"list\"]} path \"+/ad/ca.sbrf.ru/config\" {capabilities = [\"create\", \"update\"]} path \"+/ad/ca.sbrf.ru/roles/*\" {capabilities = [\"create\", \"update\"]} path \"+/ad/ca.sbrf.ru/rotate-role/*\" {capabilities = [\"create\", \"update\"]} path \"+/ad/omega.sbrf.ru/config\" {capabilities = [\"create\", \"update\"]} path \"+/ad/omega.sbrf.ru/roles/*\" {capabilities = [\"create\", \"update\"]} path \"+/ad/omega.sbrf.ru/rotate-role/*\" {capabilities = [\"create\", \"update\"]} path \"+/ad/delta.sbrf.ru/config\" {capabilities = [\"create\", \"update\"]} path \"+/ad/delta.sbrf.ru/roles/*\" {capabilities = [\"create\", \"update\"]} path \"+/ad/delta.sbrf.ru/rotate-role/*\" {capabilities = [\"create\", \"update\"]}","adalpha_policy_name":"secman-adalpha-policy","admin_group_name":"admin-secman-admins","admin_policy":"\npath \"cmo/*\" {capabilities = [\"create\", \"read\", \"list\", \"update\", \"delete\"]} \npath \"auth/*\" {capabilities = [\"read\", \"list\"]} \npath \"identity/*\" {capabilities = [\"read\", \"list\"]} \npath \"sys/*\" {capabilities = [\"read\", \"list\"]} \npath \"+/auth/*\" {capabilities = [\"read\", \"list\"]} \npath \"+/identity/*\" {capabilities = [\"read\", \"list\"]} \npath \"+/sys/*\" {capabilities = [\"read\", \"list\"]} \npath \"+/cmo/*\" {capabilities = [\"create\", \"read\", \"list\", \"update\", \"delete\"]} \npath \"+/I/+/KV/\" {capabilities = [\"list\"]} \npath \"+/I/+/PKI/\" {capabilities = [\"list\"]} \npath \"+/I/+/SBERCA/\" {capabilities = [\"list\"]} \npath \"+/I/+/KV/*\" {capabilities = [\"create\", \"update\", \"delete\"]} \npath \"+/I/+/PKI/*\" {capabilities = [\"create\", \"update\", \"delete\"]} \npath \"+/I/+/SBERCA/*\" {capabilities = [\"create\", \"update\", \"delete\"]} \npath \"+/I/+/auth/*\" {capabilities = [\"read\", \"list\"]} \npath \"+/I/+/identity/*\" {capabilities = [\"read\", \"list\"]} \npath \"+/I/+/sys/*\" {capabilities = [\"read\", \"list\"]} \npath \"+/A/+/+/+/KV/\" {capabilities = [\"list\"]} \npath \"+/A/+/+/+/PKI/\" {capabilities = [\"list\"]} \npath \"+/A/+/+/+/SBERCA/\" {capabilities = [\"list\"]} \npath \"+/A/+/+/+/KV/*\" {capabilities = [\"create\", \"update\", \"delete\"]} \npath \"+/A/+/+/+/PKI/*\" {capabilities = [\"create\", \"update\", \"delete\"]} \npath \"+/A/+/+/+/SBERCA/*\" {capabilities = [\"create\", \"update\", \"delete\"]} \npath \"+/A/+/+/+/auth/*\" {capabilities = [\"read\", \"list\"]} \npath \"+/A/+/+/+/identity/*\" {capabilities = [\"read\", \"list\"]} \npath \"+/A/+/+/+/sys/*\" {capabilities = [\"read\", \"list\"]}","admin_policy_name":"secman-admins-policy","adsigma_policy":"path \"sys/mounts/ad/sigma.sbrf.ru\" {capabilities = [\"create\", \"update\"]} path \"sys/mounts/ad/sigma.sbrf.ru/tune\" {capabilities = [\"read\", \"list\"]} path \"ad/sigma.sbrf.ru/config\" {capabilities = [\"create\", \"update\"]} path \"ad/sigma.sbrf.ru/roles/*\" {capabilities = [\"create\", \"update\"]} path \"ad/sigma.sbrf.ru/rotate-role/*\" {capabilities = [\"create\", \"update\"]} path \"+/sys/mounts/ad/sigma.sbrf.ru\" {capabilities = [\"create\", \"update\"]} path \"+/sys/mounts/ad/sigma.sbrf.ru/tune\" {capabilities = [\"read\", \"list\"]} path \"+/ad/sigma.sbrf.ru/config\" {capabilities = [\"create\", \"update\"]} path \"+/ad/sigma.sbrf.ru/roles/*\" {capabilities = [\"create\", \"update\"]} path \"+/ad/sigma.sbrf.ru/rotate-role/*\" {capabilities = [\"create\", \"update\"]}","adsigma_policy_name":"secman-adsigma-policy","alpha_admin_group_name":"alpha-secman-admins","as_policy":{"auditor":"path \"{{.Path}}/*\" {capabilities = [ \"list\"]}","owner":"path \"{{.Path}}/*\" {capabilities = [ \"create\", \"read\", \"update\", \"delete\", \"list\"]}"},"block_policy":{"owner":"path \"{{.Path}}/*\" {capabilities = [ \"create\", \"read\", \"update\", \"delete\", \"list\"]}"},"infra_owner_policy_name_template":"ALL-GA-SecMan-\u003cnamespace\u003e-I-A-\u003crolename\u003e","infra_policy":{"owner":"path \"{{.Path}}/*\" {capabilities = [ \"create\", \"read\", \"update\", \"delete\", \"list\"]}"},"namespace_policy":{"auditor":"path \"{{.Path}}/*\" {capabilities = [ \"list\"]}","consumer":"path \"{{.Path}}/*\" {capabilities = [ \"read\"]}","owner":"path \"{{.Path}}/*\" {capabilities = [ \"create\", \"read\", \"update\", \"delete\", \"list\"]}"},"sberca_config":{"api_url":"https://ilcs-gw-ci02138896-edevgen-ilcs-ift.apps.dev-gen.sigma.sbrf.ru/caproxy/v1","bucket":"sberca","ca_name":"sberca-test1-ext","ca_path":"aia/sberca-test1-ext.crt","ca_rotation_time":"24h0m0s","ceph_import":["http://haproxy-edz1.sigma.sbrf.ru"],"crl_path":"cdp/sberca-test1-ext.crl","crl_rotation_time":"24h0m0s","key_id":"1107","password_policy":"","public_rsa_key":"-----BEGIN RSA PUBLIC KEY-----\nMIIBCgKCAQEAniUhfUODqIAjUuttF1ArIwbGNZ2jZ/Ba6WUIADeVTZGLMsX4Gqvg\npQqf3cOEV40LGAID0EkThtcPF56RbiwKhiXQyOIhKMhjKln+xGhXQS0z9U2YDzpD\nQS/gi8PJ+XEBJdsY3NvarMC9cphuqPwFgZA44wERD9lBp5suj/kunyCF+8V2FppO\nhMlkOu4hNl9GHpAM6Y6fbrqp62qD/2q+nk7s/RT0QFYp7xHqTK5oAPS1r8sMbw/u\nsr043mSaLw/mEVQIyAsGZcPbYRkicaAdncds1Ge1bYHldn/4lMiic0oIR3Kr7OK/\ndvAWUCLC0qQ7FVqonwGR0URo5Q/O1OVBdQIDAQAB\n-----END RSA PUBLIC KEY-----\n","root_path":"aia/sberca-test1-root-ext.crt","system_id":"SecMan","x_channel":"LIGUE_CHANNEL","x_system":"LIGUE"},"sberca_roles":{"rlm-client-ift-3y":{"allow_bare_domains":"true","allowed_domains":"example.com","organization":"Sberbank of Russia"},"rlm-server-client-ift-1y":{"allow_bare_domains":"true","allowed_domains":"example.com","organization":"Sberbank of Russia"},"rlm-server-ift-1y":{"allow_bare_domains":"true","allowed_domains":"example.com","organization":"Sberbank of Russia"}},"secrets_group_policy":{"owner":"path \"{{.Path}}/*\" {capabilities = [ \"create\", \"read\", \"update\", \"delete\", \"list\"]}"},"service_manager_engine_config":{"service_manager_engine_urls":null},"sigma_admin_group_name":"sig*   Trying 10.53.209.176:443...
+* Connected to dev.secrets.sigma.sbrf.ru (10.53.209.176) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+} [5 bytes data]
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+{ [122 bytes data]
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+{ [15 bytes data]
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+{ [5026 bytes data]
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+{ [264 bytes data]
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+{ [36 bytes data]
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+} [36 bytes data]
+* SSL connection using TLSv1.3 / TLS_AES_128_GCM_SHA256
+* ALPN, server accepted to use h2
+* Server certificate:
+*  subject: C=RU; L=Moscow; O=Savings Bank of the Russian Federation; OU=00CA; CN=dev.secrets.sigma.sbrf.ru
+*  start date: Oct 27 16:11:55 2021 GMT
+*  expire date: Oct 27 16:16:55 2022 GMT
+*  issuer: C=RU; O=Sberbank of Russia; CN=SberCA Test Ext
+*  SSL certificate verify result: self signed certificate in certificate chain (19), continuing anyway.
+* Using HTTP2, server supports multiplexing
+* Connection state changed (HTTP/2 confirmed)
+* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0
+} [5 bytes data]
+* Using Stream ID: 1 (easy handle 0x239e21a2290)
+} [5 bytes data]
+> GET /v1/cmo/config HTTP/2
+> Host: dev.secrets.sigma.sbrf.ru
+> user-agent: curl/7.80.0
+> accept: */*
+> x-vault-token: s.dO20aHOtjXORlJnqgEKJW5Qq
+> x-vault-request: true
+> content-type: application/json
+> connection: close
+> 
+{ [5 bytes data]
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+{ [130 bytes data]
+* Connection state changed (MAX_CONCURRENT_STREAMS == 250)!
+} [5 bytes data]
+< HTTP/2 200 
+< cache-control: no-store
+< content-type: application/json
+< date: Mon, 04 Apr 2022 14:03:41 GMT
+< 
+{ [5 bytes data]
+100  9240    0  9240    0     0   155k      0 --:--:-- --:--:-- --:--:--  161kma-secman-admins","temp_admin_plus_policy":"path \"+/as/*\" {  capabilities = [\"create\", \"list\", \"update\", \"delete\", \"sudo\"]} path \"+/AS/*\" {  capabilities = [\"create\", \"list\", \"update\", \"delete\", \"sudo\"]} path \"+/a/*\" {  capabilities = [\"create\", \"list\", \"update\", \"delete\", \"sudo\"]} path \"+/A/*\" {  capabilities = [\"create\", \"list\", \"update\", \"delete\", \"sudo\"]} path \"auth/*\" {  capabilities = [\"create\", \"read\", \"list\", \"update\", \"delete\", \"sudo\"]} path \"identity/*\" {  capabilities = [\"create\", \"read\", \"list\", \"update\", \"delete\", \"sudo\"]} path \"sys/*\" {  capabilities = [\"create\", \"read\", \"list\", \"update\", \"delete\", \"sudo\"]} path \"cmo/*\" {  capabilities = [\"create\", \"read\", \"list\", \"update\", \"delete\"]}","temp_admin_plus_policy_name":"temp-secman-admins-plus-policy-tenant","tenant_policy":{"owner":"path \"{{.Path}}/*\" {capabilities = [ \"create\", \"read\", \"update\", \"delete\", \"list\"]}"},"user_id_type_secret":"employeeID","user_id_type_tree":"employeeID","vault_host":"http://127.0.0.1:8200"},"wrap_info":null,"warnings":null,"auth":null}
+200
+* Connection #0 to host dev.secrets.sigma.sbrf.ru left intact
+
+
+
+
+

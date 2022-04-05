@@ -1,0 +1,292 @@
+curl -kviX GET ${X_TEST_VAULT_ADDR}/v1/${X_TEST_VAULT_CMO_NAME}/storages/tree/${X_TEST_VAULT_CMO_TENANT}/${X_TEST_VAULT_EMPLOYEEID} -H "X-Vault-Token: ${X_TEST_VAULT_TOKEN}" -H "Content-Type: application/json" --write-out %{http_code} -H "Connection: close"
+Note: Unnecessary use of -X or --request, GET is already inferred.
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 10.53.209.176:443...
+* Connected to dev.secrets.sigma.sbrf.ru (10.53.209.176) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+} [5 bytes data]
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+{ [122 bytes data]
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+{ [15 bytes data]
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+{ [5026 bytes data]
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+{ [264 bytes data]
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+{ [36 bytes data]
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+} [36 bytes data]
+* SSL connection using TLSv1.3 / TLS_AES_128_GCM_SHA256
+* ALPN, server accepted to use h2
+* Server certificate:
+*  subject: C=RU; L=Moscow; O=Savings Bank of the Russian Federation; OU=00CA; CN=dev.secrets.sigma.sbrf.ru
+*  start date: Oct 27 16:11:55 2021 GMT
+*  expire date: Oct 27 16:16:55 2022 GMT
+*  issuer: C=RU; O=Sberbank of Russia; CN=SberCA Test Ext
+*  SSL certificate verify result: self signed certificate in certificate chain (19), continuing anyway.
+* Using HTTP2, server supports multiplexing
+* Connection state changed (HTTP/2 confirmed)
+* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0
+} [5 bytes data]
+* Using Stream ID: 1 (easy handle 0x17be09e2d60)
+} [5 bytes data]
+> GET /v1/cmo/storages/tree/CI02315894_CI03240756_VLTDEL/999061057 HTTP/2
+> Host: dev.secrets.sigma.sbrf.ru
+> user-agent: curl/7.80.0
+> accept: */*
+> x-vault-token: s.dO20aHOtjXORlJnqgEKJW5Qq
+> content-type: application/json
+> connection: close
+> 
+{ [5 bytes data]
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+{ [130 bytes data]
+* Connection state changed (MAX_CONCURRENT_STREAMS == 250)!
+} [5 bytes data]
+< HTTP/2 200 
+< cache-control: no-store
+< content-type: application/json
+< content-length: 1563
+< date: Tue, 05 Apr 2022 17:58:00 GMT
+< 
+{ [5 bytes data]
+100  1563  100  1563    0     0  12075      0 --:--:-- --:--:-- --:--:-- 12307HTTP/2 200 
+cache-control: no-store
+content-type: application/json
+content-length: 1563
+date: Tue, 05 Apr 2022 17:58:00 GMT
+
+{"request_id":"5ea523fe-2f2f-2f8d-4cb2-03a05a347e69","lease_id":"","renewable":false,"lease_duration":0,"data":{"nodes":"[{\"id\":\"CI02315894_CI03240756_VLTDEL\",\"parent_id\":\"\",\"name\":\"CI02315894_CI03240756_VLTDEL\",\"path\":\"/CI02315894_CI03240756_VLTDEL/\",\"nodeType\":\"tenant\",\"groups\":null,\"metadata\":{}},{\"id\":\"CI02315894_CI03240756_VLTDEL_A\",\"parent_id\":\"CI02315894_CI03240756_VLTDEL\",\"name\":\"CI02315894_CI03240756_VLTDEL_A\",\"path\":\"/CI02315894_CI03240756_VLTDEL/A/\",\"nodeType\":\"as\",\"groups\":[\"ALL-GA-SecMan-CI02315894-CI03240756-VLTDEL-A-aa\"],\"metadata\":{}},{\"id\":\"CI02315894_CI03240756_VLTDEL_VLTDE\",\"parent_id\":\"CI02315894_CI03240756_VLTDEL_A\",\"name\":\"VLTDE\",\"path\":\"/CI02315894_CI03240756_VLTDEL/A/VLTDE/\",\"nodeType\":\"block\",\"groups\":null,\"metadata\":{}},{\"id\":\"CI02315894_CI03240756_VLTDEL_VLTDE_OSH\",\"parent_id\":\"CI02315894_CI03240756_VLTDEL_VLTDE\",\"name\":\"OSH\",\"path\":\"/CI02315894_CI03240756_VLTDEL/A/VLTDE/OSH/\",\"nodeType\":\"space\",\"groups\":null,\"metadata\":{}},{\"id\":\"CI02315894_CI03240756_VLTDEL_VLTDE_OSH_VLTDE\",\"parent_id\":\"CI02315894_CI03240756_VLTDEL_VLTDE_OSH\",\"name\":\"VLTDE\",\"path\":\"/CI02315894_CI03240756_VLTDEL/A/VLTDE/OSH/VLTDE\",\"nodeType\":\"space\",\"groups\":[\"ALL-GA-SecMan-CI02315894-CI03240756-VLTDEL-A-VLTDE-OSH-VLTDE-ao\",\"ALL-GA-SecMan-CI02315894-CI03240756-VLTDEL-A-VLTDE-OSH-VLTDE-ac\",\"ALL-GA-SecMan-CI02315894-CI03240756-VLTDEL-A-VLTDE-OSH-VLTDE-aa\"],\"metadata\":{}}]"},"wrap_info":null,"warnings":null,"auth":null}
+200
+* Connection #0 to host dev.secrets.sigma.sbrf.ru left intact
+
+
+
+
+
+curl -kviX GET ${X_TEST_VAULT_ADDR}/v1/${X_TEST_VAULT_CMO_NAME}/storages/tree/${X_TEST_VAULT_CMO_TENANT}/${X_TEST_VAULT_EMPLOYEEID} -H "X-Vault-Token: ${X_TEST_VAULT_TOKEN}" -H "Content-Type: application/json" --write-out %{http_code} -H "Connection: close"
+Note: Unnecessary use of -X or --request, GET is already inferred.
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 10.53.209.176:443...
+* Connected to dev.secrets.sigma.sbrf.ru (10.53.209.176) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+} [5 bytes data]
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+{ [122 bytes data]
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+{ [15 bytes data]
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+{ [5026 bytes data]
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+{ [264 bytes data]
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+{ [36 bytes data]
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+} [36 bytes data]
+* SSL connection using TLSv1.3 / TLS_AES_128_GCM_SHA256
+* ALPN, server accepted to use h2
+* Server certificate:
+*  subject: C=RU; L=Moscow; O=Savings Bank of the Russian Federation; OU=00CA; CN=dev.secrets.sigma.sbrf.ru
+*  start date: Oct 27 16:11:55 2021 GMT
+*  expire date: Oct 27 16:16:55 2022 GMT
+*  issuer: C=RU; O=Sberbank of Russia; CN=SberCA Test Ext
+*  SSL certificate verify result: self signed certificate in certificate chain (19), continuing anyway.
+* Using HTTP2, server supports multiplexing
+* Connection state changed (HTTP/2 confirmed)
+* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0
+} [5 bytes data]
+* Using Stream ID: 1 (easy handle 0x16e21ea2d60)
+} [5 bytes data]
+> GET /v1/cmo/storages/tree/CI02315894_CI03240756_VLTDEL/999061057 HTTP/2
+> Host: dev.secrets.sigma.sbrf.ru
+> user-agent: curl/7.80.0
+> accept: */*
+> x-vault-token: s.dO20aHOtjXORlJnqgEKJW5Qq
+> content-type: application/json
+> connection: close
+> 
+{ [5 bytes data]
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+{ [130 bytes data]
+* Connection state changed (MAX_CONCURRENT_STREAMS == 250)!
+} [5 bytes data]
+< HTTP/2 200 
+< cache-control: no-store
+< content-type: application/json
+< content-length: 1563
+< date: Tue, 05 Apr 2022 17:58:01 GMT
+< 
+{ [5 bytes data]
+100  1563  100  1563    0     0  15809      0 --:--:-- --:--:-- --:--:-- 16113HTTP/2 200 
+cache-control: no-store
+content-type: application/json
+content-length: 1563
+date: Tue, 05 Apr 2022 17:58:01 GMT
+
+{"request_id":"1cb0e168-45a4-e5e7-5ec0-bc2c47e7bc84","lease_id":"","renewable":false,"lease_duration":0,"data":{"nodes":"[{\"id\":\"CI02315894_CI03240756_VLTDEL\",\"parent_id\":\"\",\"name\":\"CI02315894_CI03240756_VLTDEL\",\"path\":\"/CI02315894_CI03240756_VLTDEL/\",\"nodeType\":\"tenant\",\"groups\":null,\"metadata\":{}},{\"id\":\"CI02315894_CI03240756_VLTDEL_A\",\"parent_id\":\"CI02315894_CI03240756_VLTDEL\",\"name\":\"CI02315894_CI03240756_VLTDEL_A\",\"path\":\"/CI02315894_CI03240756_VLTDEL/A/\",\"nodeType\":\"as\",\"groups\":[\"ALL-GA-SecMan-CI02315894-CI03240756-VLTDEL-A-aa\"],\"metadata\":{}},{\"id\":\"CI02315894_CI03240756_VLTDEL_VLTDE\",\"parent_id\":\"CI02315894_CI03240756_VLTDEL_A\",\"name\":\"VLTDE\",\"path\":\"/CI02315894_CI03240756_VLTDEL/A/VLTDE/\",\"nodeType\":\"block\",\"groups\":null,\"metadata\":{}},{\"id\":\"CI02315894_CI03240756_VLTDEL_VLTDE_OSH\",\"parent_id\":\"CI02315894_CI03240756_VLTDEL_VLTDE\",\"name\":\"OSH\",\"path\":\"/CI02315894_CI03240756_VLTDEL/A/VLTDE/OSH/\",\"nodeType\":\"space\",\"groups\":null,\"metadata\":{}},{\"id\":\"CI02315894_CI03240756_VLTDEL_VLTDE_OSH_VLTDE\",\"parent_id\":\"CI02315894_CI03240756_VLTDEL_VLTDE_OSH\",\"name\":\"VLTDE\",\"path\":\"/CI02315894_CI03240756_VLTDEL/A/VLTDE/OSH/VLTDE\",\"nodeType\":\"space\",\"groups\":[\"ALL-GA-SecMan-CI02315894-CI03240756-VLTDEL-A-VLTDE-OSH-VLTDE-ao\",\"ALL-GA-SecMan-CI02315894-CI03240756-VLTDEL-A-VLTDE-OSH-VLTDE-ac\",\"ALL-GA-SecMan-CI02315894-CI03240756-VLTDEL-A-VLTDE-OSH-VLTDE-aa\"],\"metadata\":{}}]"},"wrap_info":null,"warnings":null,"auth":null}
+200
+* Connection #0 to host dev.secrets.sigma.sbrf.ru left intact
+
+
+
+
+
+curl -kviX GET ${X_TEST_VAULT_ADDR}/v1/${X_TEST_VAULT_CMO_NAME}/storages/tree/${X_TEST_VAULT_CMO_TENANT}/${X_TEST_VAULT_EMPLOYEEID} -H "X-Vault-Token: ${X_TEST_VAULT_TOKEN}" -H "Content-Type: application/json" --write-out %{http_code} -H "Connection: close"
+Note: Unnecessary use of -X or --request, GET is already inferred.
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 10.53.209.176:443...
+* Connected to dev.secrets.sigma.sbrf.ru (10.53.209.176) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+} [5 bytes data]
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+{ [122 bytes data]
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+{ [15 bytes data]
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+{ [5026 bytes data]
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+{ [264 bytes data]
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+{ [36 bytes data]
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+} [36 bytes data]
+* SSL connection using TLSv1.3 / TLS_AES_128_GCM_SHA256
+* ALPN, server accepted to use h2
+* Server certificate:
+*  subject: C=RU; L=Moscow; O=Savings Bank of the Russian Federation; OU=00CA; CN=dev.secrets.sigma.sbrf.ru
+*  start date: Oct 27 16:11:55 2021 GMT
+*  expire date: Oct 27 16:16:55 2022 GMT
+*  issuer: C=RU; O=Sberbank of Russia; CN=SberCA Test Ext
+*  SSL certificate verify result: self signed certificate in certificate chain (19), continuing anyway.
+* Using HTTP2, server supports multiplexing
+* Connection state changed (HTTP/2 confirmed)
+* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0
+} [5 bytes data]
+* Using Stream ID: 1 (easy handle 0x268392e2d60)
+} [5 bytes data]
+> GET /v1/cmo/storages/tree/CI02315894_CI03240756_VLTDEL/999061057 HTTP/2
+> Host: dev.secrets.sigma.sbrf.ru
+> user-agent: curl/7.80.0
+> accept: */*
+> x-vault-token: s.dO20aHOtjXORlJnqgEKJW5Qq
+> content-type: application/json
+> connection: close
+> 
+{ [5 bytes data]
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+{ [130 bytes data]
+* Connection state changed (MAX_CONCURRENT_STREAMS == 250)!
+} [5 bytes data]
+< HTTP/2 200 
+< cache-control: no-store
+< content-type: application/json
+< content-length: 1563
+< date: Tue, 05 Apr 2022 17:58:02 GMT
+< 
+{ [5 bytes data]
+100  1563  100  1563    0     0  18001      0 --:--:-- --:--:-- --:--:-- 18607HTTP/2 200 
+cache-control: no-store
+content-type: application/json
+content-length: 1563
+date: Tue, 05 Apr 2022 17:58:02 GMT
+
+{"request_id":"ce2093ac-2ce0-6e9c-d8ea-9181df79cc54","lease_id":"","renewable":false,"lease_duration":0,"data":{"nodes":"[{\"id\":\"CI02315894_CI03240756_VLTDEL\",\"parent_id\":\"\",\"name\":\"CI02315894_CI03240756_VLTDEL\",\"path\":\"/CI02315894_CI03240756_VLTDEL/\",\"nodeType\":\"tenant\",\"groups\":null,\"metadata\":{}},{\"id\":\"CI02315894_CI03240756_VLTDEL_A\",\"parent_id\":\"CI02315894_CI03240756_VLTDEL\",\"name\":\"CI02315894_CI03240756_VLTDEL_A\",\"path\":\"/CI02315894_CI03240756_VLTDEL/A/\",\"nodeType\":\"as\",\"groups\":[\"ALL-GA-SecMan-CI02315894-CI03240756-VLTDEL-A-aa\"],\"metadata\":{}},{\"id\":\"CI02315894_CI03240756_VLTDEL_VLTDE\",\"parent_id\":\"CI02315894_CI03240756_VLTDEL_A\",\"name\":\"VLTDE\",\"path\":\"/CI02315894_CI03240756_VLTDEL/A/VLTDE/\",\"nodeType\":\"block\",\"groups\":null,\"metadata\":{}},{\"id\":\"CI02315894_CI03240756_VLTDEL_VLTDE_OSH\",\"parent_id\":\"CI02315894_CI03240756_VLTDEL_VLTDE\",\"name\":\"OSH\",\"path\":\"/CI02315894_CI03240756_VLTDEL/A/VLTDE/OSH/\",\"nodeType\":\"space\",\"groups\":null,\"metadata\":{}},{\"id\":\"CI02315894_CI03240756_VLTDEL_VLTDE_OSH_VLTDE\",\"parent_id\":\"CI02315894_CI03240756_VLTDEL_VLTDE_OSH\",\"name\":\"VLTDE\",\"path\":\"/CI02315894_CI03240756_VLTDEL/A/VLTDE/OSH/VLTDE\",\"nodeType\":\"space\",\"groups\":[\"ALL-GA-SecMan-CI02315894-CI03240756-VLTDEL-A-VLTDE-OSH-VLTDE-ao\",\"ALL-GA-SecMan-CI02315894-CI03240756-VLTDEL-A-VLTDE-OSH-VLTDE-ac\",\"ALL-GA-SecMan-CI02315894-CI03240756-VLTDEL-A-VLTDE-OSH-VLTDE-aa\"],\"metadata\":{}}]"},"wrap_info":null,"warnings":null,"auth":null}
+200
+* Connection #0 to host dev.secrets.sigma.sbrf.ru left intact
+
+
+
+
+
+curl -kviX GET ${X_TEST_VAULT_ADDR}/v1/${X_TEST_VAULT_CMO_NAME}/storages/tree/${X_TEST_VAULT_CMO_TENANT}/${X_TEST_VAULT_EMPLOYEEID} -H "X-Vault-Token: ${X_TEST_VAULT_TOKEN}" -H "Content-Type: application/json" --write-out %{http_code} -H "Connection: close"
+Note: Unnecessary use of -X or --request, GET is already inferred.
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 10.53.209.176:443...
+* Connected to dev.secrets.sigma.sbrf.ru (10.53.209.176) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+} [5 bytes data]
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+{ [122 bytes data]
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+{ [15 bytes data]
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+{ [5026 bytes data]
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+{ [264 bytes data]
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+{ [36 bytes data]
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+} [36 bytes data]
+* SSL connection using TLSv1.3 / TLS_AES_128_GCM_SHA256
+* ALPN, server accepted to use h2
+* Server certificate:
+*  subject: C=RU; L=Moscow; O=Savings Bank of the Russian Federation; OU=00CA; CN=dev.secrets.sigma.sbrf.ru
+*  start date: Oct 27 16:11:55 2021 GMT
+*  expire date: Oct 27 16:16:55 2022 GMT
+*  issuer: C=RU; O=Sberbank of Russia; CN=SberCA Test Ext
+*  SSL certificate verify result: self signed certificate in certificate chain (19), continuing anyway.
+* Using HTTP2, server supports multiplexing
+* Connection state changed (HTTP/2 confirmed)
+* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0
+} [5 bytes data]
+* Using Stream ID: 1 (easy handle 0x26f63cd2d60)
+} [5 bytes data]
+> GET /v1/cmo/storages/tree/CI02315894_CI03240756_VLTDEL/999061057 HTTP/2
+> Host: dev.secrets.sigma.sbrf.ru
+> user-agent: curl/7.80.0
+> accept: */*
+> x-vault-token: s.dO20aHOtjXORlJnqgEKJW5Qq
+> content-type: application/json
+> connection: close
+> 
+{ [5 bytes data]
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+{ [130 bytes data]
+* Connection state changed (MAX_CONCURRENT_STREAMS == 250)!
+} [5 bytes data]
+< HTTP/2 200 
+< cache-control: no-store
+< content-type: application/json
+< content-length: 1563
+< date: Tue, 05 Apr 2022 17:58:03 GMT
+< 
+{ [5 bytes data]
+100  1563  100  1563    0     0  16832      0 --:--:-- --:--:-- --:--:-- 17366HTTP/2 200 
+cache-control: no-store
+content-type: application/json
+content-length: 1563
+date: Tue, 05 Apr 2022 17:58:03 GMT
+
+{"request_id":"368ace7a-9b0e-2bcf-a1f9-207209ddf493","lease_id":"","renewable":false,"lease_duration":0,"data":{"nodes":"[{\"id\":\"CI02315894_CI03240756_VLTDEL\",\"parent_id\":\"\",\"name\":\"CI02315894_CI03240756_VLTDEL\",\"path\":\"/CI02315894_CI03240756_VLTDEL/\",\"nodeType\":\"tenant\",\"groups\":null,\"metadata\":{}},{\"id\":\"CI02315894_CI03240756_VLTDEL_A\",\"parent_id\":\"CI02315894_CI03240756_VLTDEL\",\"name\":\"CI02315894_CI03240756_VLTDEL_A\",\"path\":\"/CI02315894_CI03240756_VLTDEL/A/\",\"nodeType\":\"as\",\"groups\":[\"ALL-GA-SecMan-CI02315894-CI03240756-VLTDEL-A-aa\"],\"metadata\":{}},{\"id\":\"CI02315894_CI03240756_VLTDEL_VLTDE\",\"parent_id\":\"CI02315894_CI03240756_VLTDEL_A\",\"name\":\"VLTDE\",\"path\":\"/CI02315894_CI03240756_VLTDEL/A/VLTDE/\",\"nodeType\":\"block\",\"groups\":null,\"metadata\":{}},{\"id\":\"CI02315894_CI03240756_VLTDEL_VLTDE_OSH\",\"parent_id\":\"CI02315894_CI03240756_VLTDEL_VLTDE\",\"name\":\"OSH\",\"path\":\"/CI02315894_CI03240756_VLTDEL/A/VLTDE/OSH/\",\"nodeType\":\"space\",\"groups\":null,\"metadata\":{}},{\"id\":\"CI02315894_CI03240756_VLTDEL_VLTDE_OSH_VLTDE\",\"parent_id\":\"CI02315894_CI03240756_VLTDEL_VLTDE_OSH\",\"name\":\"VLTDE\",\"path\":\"/CI02315894_CI03240756_VLTDEL/A/VLTDE/OSH/VLTDE\",\"nodeType\":\"space\",\"groups\":[\"ALL-GA-SecMan-CI02315894-CI03240756-VLTDEL-A-VLTDE-OSH-VLTDE-ao\",\"ALL-GA-SecMan-CI02315894-CI03240756-VLTDEL-A-VLTDE-OSH-VLTDE-ac\",\"ALL-GA-SecMan-CI02315894-CI03240756-VLTDEL-A-VLTDE-OSH-VLTDE-aa\"],\"metadata\":{}}]"},"wrap_info":null,"warnings":null,"auth":null}
+200
+* Connection #0 to host dev.secrets.sigma.sbrf.ru left intact
+
+
+
+
+

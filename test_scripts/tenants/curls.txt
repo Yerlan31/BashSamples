@@ -1,0 +1,3 @@
+curl -kviX GET ${X_TEST_VAULT_ADDR}${X_TEST_VAULT_PATH} -H "X-Vault-Token: ${X_TEST_VAULT_TOKEN}"
+curl -kviX GET ${X_TEST_VAULT_ADDR}/v1/sys/policies/acl?list=true -H "X-Vault-Token: ${X_TEST_VAULT_TOKEN}"
+curl -kviX GET ${X_TEST_VAULT_ADDR}/v1/auth/userpass/users?list=true -H "X-Vault-Token: ${X_TEST_VAULT_TOKEN}"
